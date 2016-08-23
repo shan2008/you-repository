@@ -27,7 +27,7 @@ public class FoodTypeServlet extends HttpServlet {
 		  System.out.println(method);
 		  if("addFoodType".equals(method))
 		  {	   
-			  //添加菜系
+			  //添加详细菜系
 			  addFoodType(request,response);
 			  
 		  }
