@@ -34,7 +34,7 @@ public class FoodTypeServlet extends HttpServlet {
 		  
 		  if("listFoodType".equals(method)){
 			  
-			  //菜系展示
+			  //菜系详细展示
 			listFoodType(request, response);
 		  }
 		  
