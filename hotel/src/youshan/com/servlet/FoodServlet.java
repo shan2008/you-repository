@@ -74,7 +74,7 @@ public class FoodServlet extends HttpServlet {
 	
 	}
    
-	    //查找所有
+	    //查找所有的食物
 	    public void findAllFood(HttpServletRequest request,HttpServletResponse response){
 	    	
 	    	 List<Food> list=foodService.findAllFood();//所有的菜
