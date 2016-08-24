@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,8 +20,8 @@ public class DinnerTableServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		 
-		   request.setCharacterEncoding("utf-8");//ÉèÖÃ·þÎñÆ÷½âÂë¸ñÊ½ Ö»¶Ôpost ÓÐÐ§
-		   response.setContentType("text/html;charset=utf-8");//Ö¸¶¨ä¯ÀÀÆ÷½âÎö¸ñÊ½
+		   request.setCharacterEncoding("utf-8");//ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ Ö»ï¿½ï¿½post ï¿½ï¿½Ð§
+		   response.setContentType("text/html;charset=utf-8");//Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 		   String method=request.getParameter("method");
 		   System.out.println(method);
 		   if ("addTable".equals(method)) {
@@ -56,19 +55,19 @@ public class DinnerTableServlet extends HttpServlet {
 
 	}
 	
-	 //Ìí¼Ó
+	 //ï¿½ï¿½ï¿½
 	 public void addTable(HttpServletRequest request,HttpServletResponse response){
-		    String tableName=request.getParameter("tableName"); //±ðµÄÄ¬ÈÏÎª¿Õ
+		    String tableName=request.getParameter("tableName"); //ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Îªï¿½ï¿½
 		    System.out.println(tableName);
 		    DinnerTable dinnerTable=new DinnerTable();
 		    dinnerTable.setTableName(tableName);
 		    dinnerTableService.addTable(dinnerTable);	    
-		    //Ìí¼Ó³É¹¦Ìø×ªµ½findll;
+		    //ï¿½ï¿½Ó³É¹ï¿½ï¿½ï¿½×ªï¿½ï¿½findll;
 		    findAllDinnerTables(request, response);
 					 
 	 }
 	  
-	 //É¾³ý
+	 //É¾ï¿½ï¿½
 	 public void deleteTable(HttpServletRequest request,HttpServletResponse response){
 		 int id=Integer.parseInt(request.getParameter("id"));
 		 dinnerTableService.deleteTable(id);
@@ -76,32 +75,32 @@ public class DinnerTableServlet extends HttpServlet {
 		 
 	 }
 	 
-	 //Ô¤¶¨ÍË×À
+	 //Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 
 	 public void BookTable(HttpServletRequest request,HttpServletResponse response){
 		 
 		   int id =Integer.parseInt(request.getParameter("id"));
 	        DinnerTable dinnerTable=dinnerTableService.findTablById(id);
-	        if(dinnerTable.getTableStatus()==1)//ÍË×À
+	        if(dinnerTable.getTableStatus()==1)//ï¿½ï¿½ï¿½ï¿½
 		      {    
-		        	dinnerTable.setTableStatus(0); //×´Ì¬ÇåÁã
-		        	dinnerTable.setOrderDate(null);//Ê±¼äÇåÁã
-		      }else{  //×´Ì¬ÎªÁã¾ÍÊÇÔ¤¶¨
+		        	dinnerTable.setTableStatus(0); //×´Ì¬ï¿½ï¿½ï¿½ï¿½
+		        	dinnerTable.setOrderDate(null);//Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		      }else{  //×´Ì¬Îªï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½
 		 		
-		    	  dinnerTable.setTableStatus(1); //×´Ì¬ÉèÖÃÎª1
+		    	  dinnerTable.setTableStatus(1); //×´Ì¬ï¿½ï¿½ï¿½ï¿½Îª1
 		    	  Date date=new Date();
-		    	  dinnerTable.setOrderDate(date);//Ê±¼äÇåÁã
+		    	  dinnerTable.setOrderDate(date);//Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			    }
 	        
-	        //ÐÞ¸ÄÊý¾Ý¿â
+	        //ï¿½Þ¸ï¿½ï¿½ï¿½Ý¿ï¿½
 	        dinnerTableService.BookTable(dinnerTable);
-	        //Ìø×ªµ½List·½·¨
+	        //ï¿½ï¿½×ªï¿½ï¿½Listï¿½ï¿½ï¿½ï¿½
 	        findAllDinnerTables(request, response);
 	        
 		 
 	 }
 	 
-	 //¸ù¾Ýid²éÕÒ
+	 //ï¿½ï¿½ï¿½idï¿½ï¿½ï¿½ï¿½
     public void findTableById(HttpServletRequest request,HttpServletResponse response){
     	
     	
@@ -113,7 +112,7 @@ public class DinnerTableServlet extends HttpServlet {
     	  System.out.println(dinnerTables.size());
     	  request.setAttribute("dinnerTables", dinnerTables);
     	  
-    	  //ÖØ¶¨Ïò
+    	  //ï¿½Ø¶ï¿½ï¿½ï¿½
     	  try {
 			request.getRequestDispatcher("/sys/boardList.jsp").forward(request, response);
 		} catch (Exception e) {

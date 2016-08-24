@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.UUID;
 
-import javax.persistence.Id;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,11 +37,11 @@ public class FoodServlet extends HttpServlet {
 		   String method=request.getParameter("method");
 		   /*
 		    * 
-		    *  public List<Food> findAllFood(); //²éÕÒËùÓÐ
-      public Food findFoodById(int id);//¸ù¾Ýid ²éÕÒ
-      public void addFood(Food food);//Ìí¼Ó²Ë
-      public void updateFood(Food food);//¸üÐÂ
-      public void deleteFood(int id);//É¾³ý²Ë
+		    *  public List<Food> findAllFood(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      public Food findFoodById(int id);//ï¿½ï¿½ï¿½id ï¿½ï¿½ï¿½ï¿½
+      public void addFood(Food food);//ï¿½ï¿½Ó²ï¿½
+      public void updateFood(Food food);//ï¿½ï¿½ï¿½ï¿½
+      public void deleteFood(int id);//É¾ï¿½ï¿½ï¿½
 		    */
 		   
 		   if("findAllFood".equals(method)){
@@ -74,10 +74,10 @@ public class FoodServlet extends HttpServlet {
 	
 	}
    
-	    //²éÕÒËùÓÐµÄÊ³Îï
+	    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ê³ï¿½ï¿½
 	    public void findAllFood(HttpServletRequest request,HttpServletResponse response){
 	    	
-	    	 List<Food> list=foodService.findAllFood();//ËùÓÐµÄ²Ë
+	    	 List<Food> list=foodService.findAllFood();//ï¿½ï¿½ï¿½ÐµÄ²ï¿½
 	    	 System.out.println(list.size());
 	    	 request.setAttribute("foodlist", list);
 	    	 
@@ -90,15 +90,15 @@ public class FoodServlet extends HttpServlet {
 	    	 
 	    }
 	    
-	    //¸ù¾Ýid ²éÕÒ
+	    //ï¿½ï¿½ï¿½id ï¿½ï¿½ï¿½ï¿½
 	    public void findFoodById(HttpServletRequest request,HttpServletResponse response){
 	    	int id=Integer.parseInt(request.getParameter("id"));
-	    	//²éÕÒ
+	    	//ï¿½ï¿½ï¿½ï¿½
 	    	Food food=foodService.findFoodById(id);
-	    	//·ÅÈëÓò¶ÔÏó
+	    	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    	request.setAttribute("food", food);
 	    	System.out.println(food.getImg());
-	    	//×ª·¢µ½¸üÐÂÒ³Ãæ
+	    	//×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½
 	    	try {
 				request.getRequestDispatcher("sys/updateFood.jsp").forward(request, response);
 			} catch (Exception e) {
@@ -107,32 +107,32 @@ public class FoodServlet extends HttpServlet {
 	    	
 	    }
 	    
-	    //Ìí¼Ó²Ë
+	    //ï¿½ï¿½Ó²ï¿½
 	    public void addFood(HttpServletRequest request,HttpServletResponse response){
-	    	//´´½¨ÎÄ¼þ¹¤³§Àà
+	    	//ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    	FileItemFactory factory=new DiskFileItemFactory();
-	    	//servletºËÐÄÉÏ´«Àà
+	    	//servletï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½
 	    	ServletFileUpload upload=new ServletFileUpload(factory);
-	    	//ÉèÖÃÎÄ¼þÉÏ´«´óÐ¡
+	    	//ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ï´ï¿½ï¿½ï¿½Ð¡
 	    	upload.setFileSizeMax(1024*1024); //1M;
-	    	upload.setSizeMax(1024*1024*100); //×Ü¹²100M
-	    	upload.setHeaderEncoding("utf-8"); //ÉèÖÃÎÄ¼þÃû±àÂë
+	    	upload.setSizeMax(1024*1024*100); //ï¿½Ü¹ï¿½100M
+	    	upload.setHeaderEncoding("utf-8"); //ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    	
 	    	
-	    	int id=0;//ÓÃÓÚÅÐ¶Ïµ÷ÓÃÄÄ¸ödao
-	    	//ÅÐ¶ÏÊÇ·ñÎªÎÄ¼þÉÏ´«
+	    	int id=0;//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ïµï¿½ï¿½ï¿½ï¿½Ä¸ï¿½dao
+	    	//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½Ä¼ï¿½ï¿½Ï´ï¿½
 	    	if(upload.isMultipartContent(request)){
-	    		//ÊÇÎÄ¼þÉÏ´«ÄÇÃ´×°»»ÎªfileItem ¼¯ºÏ
+	    		//ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ï´ï¿½ï¿½ï¿½Ã´×°ï¿½ï¿½ÎªfileItem ï¿½ï¿½ï¿½ï¿½
 	    		try {
 					List<FileItem> list=upload.parseRequest(request);
 				
 					Food food=new Food();
-					//µ¥ÏîÅÐ¶Ï
+					//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 					String value=null;
 					String content=null;
 					for (FileItem fileItem : list) {
-						if (fileItem.isFormField()) { //²»ÊÇÎÄ¼þÉÏ´« 
-							 value=fileItem.getFieldName();//²ËÏµ
+						if (fileItem.isFormField()) { //ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ï´ï¿½ 
+							 value=fileItem.getFieldName();//ï¿½ï¿½Ïµ
 							 content=fileItem.getString("utf-8");
 							System.out.println(value);
 							System.out.println(content);
@@ -159,12 +159,12 @@ public class FoodServlet extends HttpServlet {
 							}
 							
 							
-							//ÏÂÃæµÄÊÇÈÚºÏÐÞ¸ÄµÄ
+							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½ï¿½Þ¸Äµï¿½
 							if ("image".equals(value)) {							
-								food.setImg(content); //ÏÈ°Ñ²»¸ü¸ÄÍ¼Æ¬µÄÂ·¾¶ÉèÖÃ
+								food.setImg(content); //ï¿½È°Ñ²ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							}
 							
-							if ("id".equals(value)) {//id ²»Îª¿Õ¾ÍÊÇÐÞ¸Ä
+							if ("id".equals(value)) {//id ï¿½ï¿½Îªï¿½Õ¾ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½
 								id=Integer.parseInt(content);
 								food.setId(id);
 							}
@@ -175,17 +175,17 @@ public class FoodServlet extends HttpServlet {
 							
 							
 								String basePath="F:\\hotelpic";							  
-								String fileName=fileItem.getName();//µÃµ½ÎÄ¼þµÄÃû×Ö
+								String fileName=fileItem.getName();//ï¿½Ãµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 								System.out.println(fileName);
 								if (fileName.isEmpty()) {	
-									break; //Èç¹ûÊÇ¿ÕµÄ»°£¬ÄÇÃ´Í¼Æ¬¾ÍÃ»ÓÐ¸Ä±ä£¬Â·¾¶¾Í²»ÐèÒªÉèÖÃ£¬²»Îª¿ÕµÄ¾ÍÉèÖÃ¸²¸Ç
+									break; //ï¿½ï¿½ï¿½ï¿½Ç¿ÕµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½Ã´Í¼Æ¬ï¿½ï¿½Ã»ï¿½Ð¸Ä±ä£¬Â·ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½Îªï¿½ÕµÄ¾ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½
 								}
-								//String uuid=UUID.randomUUID().toString();//Éú³ÉÒ»¸öËæ»úµÄid;
-								//fileName=uuid+"#"+fileName;//Çø±ðÃ¿Ò»¸öÎÄ¼þ
+								//String uuid=UUID.randomUUID().toString();//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id;
+								//fileName=uuid+"#"+fileName;//ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½Ä¼ï¿½
 								File file=new File(basePath, fileName);	
-								fileItem.write(file);//Ð´ÈëÎÄ¼þ
-								fileItem.delete();//É¾³ýÁÙÊ±ÎÄ¼þworkÖÐµÄ								
-								 //±£´æÍ¼Æ¬µ½Êý¾Ý¿â£¬ÓÃÏà¶ÔÂ·¾¶£¬·ÃÎÊµÄÊ±ºò¼ÓÉÏ${pageContext.request.contentPath}
+								fileItem.write(file);//Ð´ï¿½ï¿½ï¿½Ä¼ï¿½
+								fileItem.delete();//É¾ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ä¼ï¿½workï¿½Ðµï¿½								
+								 //ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½Ý¿â£¬ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½${pageContext.request.contentPath}
 								basePath=basePath.substring(basePath.lastIndexOf("\\")+1);
 								System.out.println(basePath);	
 								food.setImg(basePath+"/"+fileName);							
@@ -196,13 +196,13 @@ public class FoodServlet extends HttpServlet {
 					}
 					
 			 
-					if (id!=0) { //²»ÎªÁã¾ÍÊÇÐÞ¸Ä
+					if (id!=0) { //ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½
 					   foodService.updateFood(food);	
-					 }else {   //ÎªÁã¾ÍÊÇÌí¼Ó
+					 }else {   //Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					    	   foodService.addFood(food); 
 						}
 			  	  
-			request.getRequestDispatcher("FoodTypeServlet?method=foodtype").forward(request, response);;//ÓÉ²ËÆ×Ìø×ªµ½findAllgFood
+			request.getRequestDispatcher("FoodTypeServlet?method=foodtype").forward(request, response);;//ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½findAllgFood
 			
 		
 					
@@ -215,48 +215,48 @@ public class FoodServlet extends HttpServlet {
 	    					    	
 	    }
 	    
-	    //¸üÐÂ²Ë£¬Ê×ÏÈ·þÎñÆ÷ÉÏµÄÍ¼Æ¬ÑçÉ¾³ý£¬È»ºóÊý¾Ý¿âÖÐµÄÂ·¾¶ÒªÉ¾³ý
+	    //ï¿½ï¿½ï¿½Â²Ë£ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½Í¼Æ¬ï¿½ï¿½É¾ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ðµï¿½Â·ï¿½ï¿½ÒªÉ¾ï¿½ï¿½
 	    public void updateFood(HttpServletRequest request,HttpServletResponse response){
 	    	   addFood(request, response);
 	    	
 	    }
 	    
-	    //É¾³ý²ËµÄÊ±ºò¶ÔÓ¦µÄÍ¼Æ¬Ò¶ÌÎÉ¾³ý
+	    //É¾ï¿½ï¿½Ëµï¿½Ê±ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Í¼Æ¬Ò¶ï¿½ï¿½É¾ï¿½ï¿½
 	    public void deleteFood(HttpServletRequest request,HttpServletResponse response){
 	    	int id=Integer.parseInt(request.getParameter("id"));
-	    	//ÏÈ²éÑ¯µÃµ½ÎÄ¼þÂ·¾¶
+	    	//ï¿½È²ï¿½Ñ¯ï¿½Ãµï¿½ï¿½Ä¼ï¿½Â·ï¿½ï¿½
 	        Food food=foodService.findFoodById(id);
 	        
-	        //»ñÈ¡ÎÄ¼þÄ¸Â·¾¶
+	        //ï¿½ï¿½È¡ï¿½Ä¼ï¿½Ä¸Â·ï¿½ï¿½
 	        String imgurl=food.getImg();
 	        imgurl="F:/hotelpic/"+imgurl.substring(imgurl.lastIndexOf("/")+1);
 	        System.out.println(imgurl);
 	       
 	     
-	        //É¾³ýÊý¾Ý¿âÖÐµÄÊý¾Ý
+	        //É¾ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½
 	        foodService.deleteFood(id);
-	        //É¾³ý¶ÔÓ¦µÄÍ¼Æ¬
+	        //É¾ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Í¼Æ¬
 	         
 	        File file=new File(imgurl);
 	        System.out.println(file);
 	        if (file.exists()) {
-				file.delete();//Èç¹û´æÔÚ¾ÍÉ¾³ý
+				file.delete();//ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½É¾ï¿½ï¿½
 			}
 	        
-	        //·µ»Øµ½²ËµÄÁÐ±í
+	        //ï¿½ï¿½ï¿½Øµï¿½ï¿½Ëµï¿½ï¿½Ð±ï¿½
 	        findAllFood(request, response);
 	    	
 	    }
 	    
 	
-	    //¸ù¾ÝfoodType_id ²éÕÒ
+	    //ï¿½ï¿½ï¿½foodType_id ï¿½ï¿½ï¿½ï¿½
 	    public void findByTypeId(HttpServletRequest request,HttpServletResponse response){
 	    	FoodType foodType=(FoodType) request.getAttribute("foodType");
 	    	List<Food> list=foodService.findByTypeId(foodType.getId());
 	    	
 	    	request.setAttribute("foodType", foodType);
 	    	request.setAttribute("foodlist", list);
-            //×ª·¢
+            //×ªï¿½ï¿½
 	    	try {
 				request.getRequestDispatcher("sys/searchfoodList.jsp").forward(request,response);
 			}  catch (Exception e) {

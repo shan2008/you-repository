@@ -6,11 +6,11 @@ import youshan.com.entity.Food;
 
 public interface IFoodDao {
 	
-      public List<Food> findAllFood(); //²éÕÒËùÓÐ
-      public Food findFoodById(int id);//¸ù¾Ýid ²éÕÒ
-      public void addFood(Food food);//Ìí¼Ó²Ë
-      public void updateFood(Food food);//¸üÐÂ
-      public void deleteFood(int id);//É¾³ý²Ë
+      public List<Food> findAllFood(); 
+      public Food findFoodById(int id);//ï¿½ï¿½ï¿½id ï¿½ï¿½ï¿½ï¿½
+      public void addFood(Food food);//ï¿½ï¿½Ó²ï¿½
+      public void updateFood(Food food);//ï¿½ï¿½ï¿½ï¿½
+      public void deleteFood(int id);//É¾ï¿½ï¿½ï¿½
       public List<Food> findByTypeId(int foodType_id);
  
 }
