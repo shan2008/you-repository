@@ -36,7 +36,9 @@ public class FoodServlet extends HttpServlet {
 		   request.setCharacterEncoding("utf-8");
 		   response.setContentType("text/html;charset=utf-8");
 		   String method=request.getParameter("method");
-		   /*
+		   /*开发
+		    * 
+		    * 
 		    * 
 		    *  public List<Food> findAllFood(); //��������
       public Food findFoodById(int id);//���id ����
