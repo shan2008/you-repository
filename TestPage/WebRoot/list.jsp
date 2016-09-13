@@ -15,7 +15,7 @@
   <body>
   	<table border="1" width="80%" align="center" cellpadding="5" cellspacing="0">
   		<tr>
-  			<td>序号</td>
+  			<td>序号1</td>
   			<td>姓名</td>
   			<td>存款</td>
   		</tr>
