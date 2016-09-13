@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>分页查询数据</title>
+    <title>分页查询数据案例</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
