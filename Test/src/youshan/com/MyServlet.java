@@ -17,7 +17,7 @@ public class MyServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //用于测试
+        //用于测试dsds
         response.getWriter().write("hello");
     }
 }
