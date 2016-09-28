@@ -12,7 +12,7 @@ public class Test {
 	   
 	      String currPage="2";	   	
 		  int page=Integer.parseInt(currPage);
-		  //创建PageBean 对象，然后传入service方法中
+		  //创建PageBean 对象，然后传入service方法中nuiha
 		  PageBean<Account> pb=new PageBean<Account>();
 		  pb.setCurrentPage(page);
 		  
