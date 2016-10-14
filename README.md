@@ -1,2 +1,0 @@
-# you-repository
-you
