@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="learningone-host:war">
+    <output-path>$PROJECT_DIR$/learningone-host/target</output-path>
+    <root id="archive" name="learningone-host.war">
+      <element id="artifact" artifact-name="learningone-host:war exploded" />
+    </root>
+  </artifact>
+</component>
