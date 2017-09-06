@@ -1,30 +1,0 @@
-
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‚öÇä
-_squid:UselessImportCheck"8Remove this unused import 'sun.java2d.SurfaceDataProxy'.(–ºÝØùÿÿÿÿ
-usquid:UselessImportCheck"NRemove this unused import 'jdk.nashorn.internal.objects.annotations.Function'.(²í¥üÿÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(—Àžìüÿÿÿÿ
-bsquid:UnusedPrivateMethod"3Remove this unused private "setStudentName" method.(ÎŸÚÉýÿÿÿÿ8¢ÂåæÙ+
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆßà¡
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(´‡¨àýÿÿÿÿ8ãëæÙ+
-Msquid:S1602",Remove useless curly braces around statement(¥¢”³üÿÿÿÿ8À®ëæÙ+
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‚çÛÕ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ôãªíÿÿÿÿÿ
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(îáíÉùÿÿÿÿ8¢ÂåæÙ+
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(™ìÞæøÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ùâËš
-Osquid:S1191"5Use classes from the Java API instead of Sun classes.(ì¿¸žýÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(òÇ½Î
-psquid:UselessImportCheck"IRemove this unused import 'com.sun.org.apache.xpath.internal.SourceTree'.(ì¿¸žýÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ó½õëùÿÿÿÿ
-_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¢åæ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ñ¹í’
-_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¶”Ò
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(òš­À
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ïÏŽ¥
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(§äïÎ
-§%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÙØ¤Þýÿÿÿÿ8šÇçæÙ+
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×Ùô¼üÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ú—Ð™
-Usquid:UselessImportCheck"3Remove this unused import 'org.dom4j.io.SAXReader'.(íüÅò
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‚¤Æù

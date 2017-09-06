@@ -6,7 +6,7 @@ package com.yous.learningtwo.host;
 public class Student {
     public  Student(){};
 
-    public Student(int id,String name){
+    public Student(Integer id,String name){
         this.id=id;
         this.name=name;
     }
@@ -18,7 +18,7 @@ public class Student {
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -26,7 +26,7 @@ public class Student {
         this.id = id;
     }
 
-    private int id;
+    private Integer id;
     private String name;
 
 }
