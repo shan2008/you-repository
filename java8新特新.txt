@@ -1,0 +1,115 @@
+ 
+ invitedOrderList.sort((e1, e2) -> {
+            if (e1.getInviteUidScore() == e2.getInviteUidScore()) {
+                return 0;
+            }
+            return e1.getInviteUidScore() < e2.getInviteUidScore() ? 1 : -1;
+        });
+
+
+ list.stream().anyMatch(x -> x.getMessageType() == 4
+
+
+ Map<Integer,List<Student>> map=list.stream().collect(Collectors.groupingBy(Student::getId));
+                                               
+ wechatList = WechatAccounts.stream().map(t -> t.getLeaderWeChat()).collect(Collectors.toList());  
+
+
+ Map<Long, String> destSetMap = destList.stream().collect(Collectors.toMap(VtmElongDestsetDestsetinfoEntity::getDestSetId,
+                VtmElongDestsetDestsetinfoEntity::getDestSetName)); 
+ 
+ Map<Long, VtmElongDestsetDestsetinfoEntity> destSetMap = destList.stream().collect(Collectors.toMap(VtmElongDestsetDestsetinfoEntity::getDestSetId,
+               （p）->p));    
+
+重复key,value 不变
+  HashMap<Integer,Student> hashMap=list2.stream().collect(Collectors.toMap(Student::getId,(o)->o,(key1,key2)->key1,LinkedHashMap::new));
+
+value 根据key 取
+ Map<Integer,VtmImGroupInfoEntity> destSetGroupMap=imGroupList.stream().collect(Collectors.toMap(VtmImGroupInfoEntity::getDestsetId, o -> o, (oldValue, newValue) -> oldValue));
+
+ Collection<String> list4 = Arrays.asList("A", "B", "C", "D", "A", "B", "C");
+
+     List<String> distinctElements = list4.stream().distinct().collect(Collectors.toList());
+
+
+persons.stream().filter(distinctByKey(p -> p.getName());
+
+
+List<VtmElongCitymappingEntity> mappingCities = Optional.ofNullable(srcDistricts)
+                .map(t -> t.stream().map(SelectItemDTO::getCityId).collect(Collectors.toList()))  -- 边成list 参数
+                .map(elongCityMappingRepository::getMappedElongCities)  ; 调用方法；
+                .orElse(null);
+
+
+
+        destcities --外面的集合   过滤desetcities 中的内容
+mappingCities -- 查出的结果
+
+        Optional.of(destcities.stream().map(VtmElongDestsetDestcityEntity::getCityId).collect(Collectors.toList())) --参数
+                .map(elongCityMappingRepository::getMappedElongCities)
+                .ifPresent(mappingCities ->
+                                destcities.removeIf(p -> mappingCities.stream()
+                                        .noneMatch(x -> Objects.equals(x.getCtripCityId(), p.getCityId())))
+                );
+
+
+
+int speakerCount = Optional.ofNullable(messageEntityList).map(messages -> messages.stream()
+                .filter(m -> !StringUtils.isEmpty(m.getTalkerWeChatNickname()))
+                .map(p -> p.getTalkerWeChatNickname())
+                .distinct().collect(Collectors.toList())
+                .size()).orElse(0);
+
+long a=Optional.ofNullable(list).map(x->x.stream().filter(y->y.getContent()!=null &&y.getContent()!="").count()).orElse(0L)
+
+
+        List<Student> list = new ArrayList<>();
+
+        list.add(new Student(1, "hahahsasasssas"));
+        list.add(new Student(2, "hahahaaa"));
+        
+        List<Student> list2 = new ArrayList<>();
+        list2.add(new Student(1, "hahahsasasssas"));
+        list2.add(new Student(2, "hahahaaa"));
+        list2.add(new Student(4, "hahahaa"));
+
+
+    //去除list2中与list 不匹配的
+        Optional.ofNullable(list).ifPresent(lt->list2.removeIf(l2->lt.stream().noneMatch(lt1->Objects.equals(lt1.getId(),l2.getId()))));
+
+ //去除list2中与list 不匹配的,加上括弧更可读
+        Optional.ofNullable(list).ifPresent(lt->{
+            list2.removeIf(l2->lt.stream().noneMatch(lt1->Objects.equals(lt1.getId(),l2.getId())));
+        });
+
+
+
+ Map<Integer, List<VtmImGroupInfoEntity>> destSetGroupMap = imGroupList.stream().collect(Collectors.groupingBy(VtmImGroupInfoEntity::getDestsetId));
+
+
+
+
+    /**
+     * 更新邀请时间字段
+     * @param orderMainId
+     * @return
+     */
+    @Override
+    boolean batchUpdateCalendarVtmOrdersNoticeTime(List<Long> orderMainId,int orderType){
+        VtmOrderTableFieldDTO tableFieldDTO= OrderDataReader.getOrderTableField(orderTypeEnum);
+        StatementParameters parameters = new StatementParameters();
+        String sql="update %s set NoticeTime=? where %s=?";
+        String.format(sql, tableFieldDTO.getTable(), tableFieldDTO.getOrderIdField());
+        parameters.setSensitive(parameters.size() + 1, Types.TIMESTAMP, DateTimeUtils.convertToTimestamp(new Date()));
+        parameters.setSensitive(parameters.size() + 1, Types.BIGINT, orderMainId);
+       // parameters.setInParameter();
+        try {
+            DbBaseDao.PkgTripServiceDbDao.update(new FreeUpdateSqlBuilder(DatabaseCategory.MySql), parameters, new DalHints());
+        } catch (SQLException e){
+            LoggingUtils.current().error("updateCalendarVtmOrdersNoticeTime",e);
+        }
+
+
+
+        return false;
+    

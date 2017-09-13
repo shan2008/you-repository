@@ -1,5 +1,8 @@
 package com.yous.learningtwo.host;
 
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -11,7 +14,17 @@ public class Demo3 {
 
     public static void main(String[] args) {
 
+       /* String smsUrl = new StringBuilder("vtmHomePageUrl")
+                .append("?issms=1&autoawaken=close&calendar=1&isHideNavBar=YES")
+                .append("&orderMainId=" + 2).toString();
+        System.out.println(smsUrl);*/
+        Instant instant = Instant.now();
+        System.out.println(instant);
+        Clock c=Clock.systemDefaultZone();
+        System.out.println(c.millis());
+        System.out.println(System.currentTimeMillis());
 
+        List<Fruit> fruit=Arrays.asList(Fruit.values());
 
        /* List<Student> list = new ArrayList<>();
         // Student st=new Student(1,"haha");
@@ -78,14 +91,14 @@ public class Demo3 {
         System.out.println(li.size());
 */
 
-        String str="%s date_add(date_format(BookingTime,'%%Y-%%m-%%d'),interval ? day)=curdate() %s ";
-        String s=String.format(str, "hahah", "呵呵呵");
-        System.out.println(String.format(str, "hahah", "呵呵呵"));
+       /* String str = "%s date_add(date_format(BookingTime,'%%Y-%%m-%%d'),interval ? day)=curdate() %s ";
+        String s = String.format(str, "hahah", "呵呵呵");
+        System.out.println(String.format(str, "hahah", "呵呵呵"));*/
 
     }
 
 
-    private static  <T> List<List<T>> splitList(List<T> list, Integer pageSize) {
+    private static <T> List<List<T>> splitList(List<T> list, Integer pageSize) {
         int listSize = list.size();
         int page = (listSize + (pageSize - 1)) / pageSize;
         List<List<T>> listArray = new ArrayList<>();

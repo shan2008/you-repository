@@ -130,7 +130,7 @@ public class XmlLearn {
         System.out.println("***********************");
 
 */
-     /* Formula formula=new Formula() {
+      Formula formula=new Formula() {
         @Override
         public double calculate(int a) {
           return  a*a;
@@ -139,10 +139,10 @@ public class XmlLearn {
 
       System.out.println(formula.calculate(5));
 
-        *//**
-         * 字符串转整数
-         *//*
-      Converter<String, Integer> converter = (f) -> Integer.valueOf(f);
+
+
+
+     /* Converter<String, Integer> converter = (f) -> Integer.valueOf(f);
       Integer converted = converter.convert("123");
       System.out.println(converted);
 
